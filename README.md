@@ -5,7 +5,12 @@ All scripts contain a method start() with example code. Please make sure that yo
 ```R
 install.packages("igraph", "dplyr", "foreach")
 ```
-Nodes of the network must have an attribute 'type', indicating the mode of each node in the bipartite network (0 or 1).
+**Nodes of the network must have an attribute 'type', indicating the mode of each node in the bipartite network (0 or 1).**
+```R
+ g <- read.csv("davis.csv") %>% graph_from_data_frame(directed=FALSE)
+ V(g)[1:18]$type <- 1
+ V(g)[1:18]$type <- 0
+```
 
 ## bipartite_cpm.R
 This script implements the biclique percolation algorithm introduced by Lehman, Schwartz, and Hansen (2008)
