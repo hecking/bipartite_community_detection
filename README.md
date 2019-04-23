@@ -14,6 +14,8 @@ install.packages("igraph", "dplyr", "foreach")
 
 ## bipartite_cpm.R
 This script implements the biclique percolation algorithm introduced by Lehman, Schwartz, and Hansen (2008)
+** Example: Clusters based on 4,5 bicliques **
+clusters <- cpm(g, 4, 5)
 
 Lehmann, S., Schwartz, M., & Hansen, L. K. (2008). Biclique communities. Physical review E, 78(1), 016108.
 
