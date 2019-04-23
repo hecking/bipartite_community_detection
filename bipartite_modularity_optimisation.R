@@ -307,7 +307,10 @@ bipartiteLouvaine <- function(g, preclustering=FALSE) {
 
 start <- function(g) {
   
-  improvement <<- TRUE
+  g <- read.csv("davis.csv") %>% graph_from_data_frame(directed=FALSE)
+  V(g)$type <- 1
+  V(g)[1:18]$type <- 0
+  
   res <- bipartiteLouvaine(g)
 
   subgroups <- lapply(unique(V(res)$cluster), function(c) {
